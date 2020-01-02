@@ -1,38 +1,272 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-app {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movie-app-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.name-filter {
+  height: 50px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.rating-filter-stars {
+  display: flex;
+  flex-direction: column;
+}
+.rating-filter-star {
+  display: flex;
+}
+.name-filter-text {
+  flex: 1;
+  border: 2px solid grey;
+  margin-top: 4px;
+}
+.name-filter-button {
+  border: 2px solid grey;
+  border-left: none;
+  background-color: transparent;
+  padding: 0 10px;
+}
+.rating-filter {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 10px;
+  justify-content: baseline;
+  cursor: pointer;
+}
+.rater {
+  margin: 0;
+}
+.rating-filter-text {
+  font-size: 1em;
+  font-weight: 700;
+}
+.new-rating-filter {
+  cursor: pointer;
+}
+.movie-app-main {
+  margin-top: 20px;
+}
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.movie-card-bordor {
+  margin: 10px;
+}
+.movie-card,
+.new-movie-card {
+  border-radius: 5px;
+  border: 2px solid grey;
+  width: 260px;
+  height: 300px;
+  position: relative;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.new-movie-pop-up {
+  width: 200px;
+  height: 200px;
+}
+.menu-nav {
+  color: grey;
+  display: flex;
+  justify-content: space-between;
+}
+.close-menu {
+  align-items: flex-end;
+  margin: 0 10px 10px;
+  background-color: transparent;
+  font-size: large;
+  font-weight: 600;
+  border: transparent;
+  color: rgb(54, 53, 53);
+  cursor: pointer;
+}
+.movie-form {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.modal {
+  z-index: 1;
+  position: fixed;
+  height: fit-content;
+  width: 460px;
+  background-color: rgba(238, 223, 223, 0.9);
+  padding: 10px;
+  top: 25%;
+  left: 50%;
+  margin-left: -230px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  flex-flow: column nowrap;
+}
+.add-movie-form {
+  display: flex;
+  flex-direction: column;
+}
+.new-movie-title {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+}
+.new-movie-title-input {
+  margin: 0 10px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.new-movie-url {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+}
+.new-movie-url-input {
+  margin: 0 10px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.new-movie-rating {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+}
+.new-movie-rating-input {
+  margin: 0 10px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.new-movie-year {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+.new-movie-year-input {
+  margin: 0 10px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.movie-rating {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  border: 2px solid grey;
+  border-top: none;
+  border-right: none;
+}
+.movie-image {
+  /* background-image: url(https://www.mearto.com/assets/no-image-83a2b680abc7af87cfff7777d0756fadb9f9aecd5ebda5d34f8139668e0fc842.png); */
+  height: 230px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.movie-title-date{
+  display: flex;
+}
+.movie-description {
+  
+  width: 250px;
+  border-top: 2px solid grey;
+  text-align: center;
+  padding: 10px;
+}
+.btn-icon {
+  padding: 0;
+  color: transparent;
+  border: transparent;
+}
+.delete-icon {
+  height: 21px;
+  width: 20px;
+  margin-left: 2px;
+}
+.desc-icon {
+  height: 21px;
+  width: 20px;
+  margin-right: 2px;
+}
+
+.edit-icon {
+  height: 21px;
+  width: 20px;
+  /* margin: 2px; */
+}
+.new-movie-card {
+  font-size: 5em;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.star {
+  color: yellow;
+  font-size: 1.4em;
 }
+.stars {font-size: 1.4em;}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.example {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin: 20px 0;
+}
+.movie-description-section {
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid grey;
+  width: 800px;
+  height: 500px;
+  margin: 10px;
+}
+.movie-description-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.desc-title {
+  margin: 5px;
+}
+.movie-content {
+  display: flex;
+}
+.movie-desc {
+  margin: 10px;
+  font-size: 16px;
+}
+.home-page {
+  display: flex;
+  margin: 10px;
 }
